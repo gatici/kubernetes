@@ -1,0 +1,12 @@
+kubectl get services 
+kubectl get pods --all-namespaces -a 
+kubectl -n onap get services|grep "portal-app"
+helm search -l
+kubectl get pods --all-namespaces -o=wide
+kubectl delete pod dev-vnfsdk-7fbcbc597f-xwrkk  -n  onap
+   27  helm upgrade --set  replicaCount=3 onap/uui/server
+   28  kubectl delete pod kubernetes-dashboard-f9577fffd-sjbgf  -n  onap
+   29  kubectl delete pod kubernetes-dashboard-f9577fffd-sjbgf  -n  kube-system
+   30  kubectl delete pod monitoring-grafana-997796fcf-c82kg  -n  kube-system
+   31  kubectl delete pod monitoring-influxdb-56fdcd96b-7xfbn  -n  kube-system
+   32  kubectl delete pod tiller-deploy-54bcc55dd5-9bl77  -n  kube-system
