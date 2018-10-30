@@ -17,3 +17,6 @@ kubectl get pods --all-namespaces -o wide
 bash into the pod via
 
 kubectl -n onap-mso exec -it  mso-1648770403-8hwcf /bin/bash
+
+helm upgrade --install  dev  local/onap  --version  2.0.0  -f  oom/kubernetes/robot/dev-env.yaml --namespace  onap  --debug
+
