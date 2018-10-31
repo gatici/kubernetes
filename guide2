@@ -26,9 +26,19 @@ kubectl get pods --all-namespaces  -o=wide
 helm delete --dry-run beijing
 helm delete --purge beijing
 
-
-
-
 Robot
 ./demo-k8s.sh onap init_robot
 
+cd to ~/oom/kuberneties/robot
+
+robot is shell scripts are here and if you look at them they are finding the pod name and then executing robot inside the robot docker container that helm install/upgrade started,
+
+./ete-k8s.sh onap health  # to do the basic sanity health check to confirm things are up and responding to their health request ( kubectl -n onap get pods  will also show if all the pods are up but you really need both tests)
+
+./demo-k8s.sh onap init_robot  # to set the login/password on the robot container. Can also kubectl exec into the robot container and create /etc/lighttpd/authorization  with the login:password
+
+./demo-k8s.sh onap init   # to do initial creation of customer , set project dependencies for drop down in VID and initial onboard and distribution of models (vFW, vLB, vFWCL, vCPE) - can take a long time since the script is serial.
+
+./demo-k8s.sh onap healthdist  (does just a vFW distribution so faster than init if you are seeing distribution failures)
+
+./demo-k8s.sh onap instantiateVFW # does a vFW onboard/distribute/instantiate and leaves it running
