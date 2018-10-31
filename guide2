@@ -1,3 +1,5 @@
+
+
 kubectl get services 
 kubectl get pods --all-namespaces -a 
 kubectl -n onap get services|grep "portal-app"
