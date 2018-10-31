@@ -16,7 +16,19 @@ kubectl get pods --all-namespaces -o wide
 
 bash into the pod via
 
-kubectl -n onap-mso exec -it  mso-1648770403-8hwcf /bin/bash
-
+kubectl exec  -it  -n onap  dev-robot-7776fd8cd4-f5pjz   -c  robot   -- /bin/bash
+helm  serve &
 helm upgrade --install  dev  local/onap  --version  2.0.0  -f  oom/kubernetes/robot/dev-env.yaml --namespace  onap  --debug
+
+kubectl get pods --all-namespaces -a
+kubectl get pods --all-namespaces  -o=wide
+
+helm delete --dry-run beijing
+helm delete --purge beijing
+
+
+
+
+Robot
+./demo-k8s.sh onap init_robot
 
