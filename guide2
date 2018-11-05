@@ -44,3 +44,7 @@ robot is shell scripts are here and if you look at them they are finding the pod
 ./demo-k8s.sh onap healthdist  (does just a vFW distribution so faster than init if you are seeing distribution failures)
 
 ./demo-k8s.sh onap instantiateVFW # does a vFW onboard/distribute/instantiate and leaves it running
+
+
+
+install ceph-common package
