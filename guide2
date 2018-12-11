@@ -48,3 +48,9 @@ robot is shell scripts are here and if you look at them they are finding the pod
 
 
 install ceph-common package
+
+
+
+helm deploy local/dmaap --version 3.0.0 --set enableDebug=true
+helm undeploy dev-dmaap local/onap --namespace onap  --verbose
+
