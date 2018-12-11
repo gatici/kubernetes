@@ -53,4 +53,9 @@ install ceph-common package
 
 helm deploy local/dmaap --version 3.0.0 --set enableDebug=true
 helm undeploy dev-dmaap local/onap --namespace onap  --verbose
+helm undeploy dev-dmaap --purge
+deleted dmaap-dr database à rm -rf dr-db/
+changed values.yaml to have initialDelaySeconds: 200 , both in liveness and rediness
+make; make onap
+helm deploy dev-dmaap local/onap --namespace onap –verbose
 
