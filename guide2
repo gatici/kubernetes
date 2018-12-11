@@ -62,4 +62,6 @@ helm deploy dev-dmaap local/onap --namespace onap –verbose
 helm deploy dev-dmaap  local/onap  --version  3.0.0   --namespace  onap  --verbose
 helm undeploy dev-dmaap local/onap --namespace onap  --verbose
  
-
+ https://wiki.onap.org/display/DW/OOM+Component
+helm del  dev-dmaap  --purge
+helm deploy  dev-dmaap  local/onap  --namespace   onap -f oom/kubernetes/dmaap/values.yaml 
