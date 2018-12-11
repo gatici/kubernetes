@@ -59,3 +59,7 @@ changed values.yaml to have initialDelaySeconds: 200 , both in liveness and redi
 make; make onap
 helm deploy dev-dmaap local/onap --namespace onap –verbose
 
+helm deploy dev-dmaap  local/onap  --version  3.0.0   --namespace  onap  --verbose
+helm undeploy dev-dmaap local/onap --namespace onap  --verbose
+ 
+
