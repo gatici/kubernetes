@@ -68,3 +68,6 @@ helm deploy  dev-dmaap  local/onap  --namespace   onap -f oom/kubernetes/dmaap/v
 
 helm  undeploy  dev-dmaap  local/onap   --namespace  onap  --verbose
 
+helm deploy dev   local/onap   --namespace  onap -f  oom/kubernetes/dmaap/values.yaml  --verbose
+
+
