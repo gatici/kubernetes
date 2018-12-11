@@ -70,4 +70,7 @@ helm  undeploy  dev-dmaap  local/onap   --namespace  onap  --verbose
 
 helm deploy dev   local/onap   --namespace  onap -f  oom/kubernetes/dmaap/values.yaml  --verbose
 
+helm deploy dev   local/onap   --namespace  onap -f  oom/kubernetes/onap/values.yaml  --verbose    upgrade  yapıyor
+ 
+
 
