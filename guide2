@@ -75,7 +75,12 @@ helm deploy dev   local/onap   --namespace  onap -f  oom/kubernetes/dmaap/values
 helm deploy dev   local/onap   --namespace  onap -f  oom/kubernetes/onap/values.yaml  --verbose    upgrade  yapıyor
  
 helm  del  --purge  dev-dmaap 
-helm  install local/dmaap  --namespace onap  --name  dev-dmaap -f oom/kubernetes/dmaap/values.yaml  --force
+helm  install local/dmaap  --namespace onap  --name  dev-dmaap -f oom/kubernetes/dmaap/values.yaml  
 
+helm upgrade --install --force
+helm delete && helm install --replace
+kubectl get pvc
+
+kubectl get all
 
 
