@@ -83,4 +83,4 @@ kubectl get pvc
 
 kubectl get all
 
-
+helm ls --all dev-dcaegen2
