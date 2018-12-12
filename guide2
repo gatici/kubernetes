@@ -88,3 +88,9 @@ helm ls --all dev-dcaegen2
 kubectl get  pvc -n onap |  grep -i dcae | awk -F" " '{print $1}'
 
 kubectl  delete  pvc   $(kubectl get  pvc -n onap |  grep -i dcae | awk -F" " '{print $1}') -n onap
+
+curl -L http://127.0.0.1:2379/health
+
+https://coreos.com/etcd/docs/latest/v2/admin_guide.html
+
+./etcdctl cluster-health
