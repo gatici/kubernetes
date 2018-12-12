@@ -84,3 +84,5 @@ kubectl get pvc
 kubectl get all
 
 helm ls --all dev-dcaegen2
+
+kubectl get  pvc -n onap |  grep -i dcae | awk -F" " '{print $1}'
