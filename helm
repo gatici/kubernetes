@@ -1,0 +1,8 @@
+helm  install local/mariadb-galera     --namespace onap  --name  dev-common  -f   aai/values.yaml
+
+kubectl delete pod NAME --grace-period=0 --force
+
+helm  install local/onap --namespace onap
+
+kubectl delete --all pods  -n onap  
+helm reset  --force
