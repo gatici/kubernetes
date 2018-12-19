@@ -1,0 +1,17 @@
+svc.cluster.local
+
+kubectl get service  -n kube-system   
+
+kubectl exec -it   busybox   nslookup   kubernetes.default
+
+kube-dns.kube-system.svc.cluster.local
+
+kubectl get services
+
+kubectl exec  -it busybox    nslookup service
+
+kubectl  get  pods -n  kube-system  |  grep -i  dns 
+
+kubectl  exec -it  busybox  cat /etc/resolv.conf 
+
+kubectl  exec -it  busybox  nslookup  kubernetes
