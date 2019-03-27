@@ -1,0 +1,13 @@
+
+
+Following the instruction in the documentation when running
+helm install --name myfn fn
+I get the error forbidden: User "system:serviceaccount:kube-system:default" cannot get namespaces in the namespace "default
+
+I solved running these commands to my k8s cluster:
+
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+
+if confirmed should be added to the documentation
